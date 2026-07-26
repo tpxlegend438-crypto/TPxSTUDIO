@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html class="dark scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>TP x STUDIO | Voxel Grade Assets</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e3b5ff",
+                        "secondary-fixed": "#79ff5b",
+                        "surface-container": "#1c1b1b",
+                        "background": "#0a0a0a",
+                    },
+                    boxShadow: {
+                        'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.4)',
+                        'neon-glow': '0 0 25px rgba(160, 32, 240, 0.4)',
+                        'green-glow': '0 0 25px rgba(121, 255, 91, 0.3)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .glass-panel {
+            background: rgba(15, 15, 15, 0.75);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(160, 32, 240, 0.5);
+            transform: translateY(-8px);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #a020f0 0%, #6e00ab 100%);
+            border-top: 1px solid rgba(255, 255, 255, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 0 30px rgba(121, 255, 91, 0.6);
+            transform: scale(1.05);
+        }
+
+        .tab-content { display: none; animation: slideUp 0.4s ease-out; }
+        .tab-content.active { display: block; }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .voxel-grid {
+            background-image: radial-gradient(rgba(160, 32, 240, 0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+
+<body class="bg-background text-gray-200 font-['Hanken_Grotesk'] overflow-x-hidden selection:bg-secondary-fixed selection:text-black">
+
+    <!-- Refined 3D Animation Background -->
+    <div id="three-container" class="fixed inset-0 z-0 pointer-events-none"></div>
+
+    <!-- Navigation -->
+    <header class="fixed top-0 w-full z-50 glass-panel border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-['Space_Grotesk'] font-bold tracking-tighter text-primary">
+                TP <span class="text-secondary-fixed">x</span> STUDIO
+            </div>
+            
+            <nav class="hidden md:flex gap-8 font-['JetBrains_Mono'] text-xs tracking-widest">
+                <a href="#inventory" class="hover:text-primary transition-colors">INVENTORY</a>
+                <a href="#services" class="hover:text-primary transition-colors">BEACONS</a>
+                <a href="#contact" class="hover:text-primary transition-colors">CONTACT</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <a href="https://wa.me/639078989078" target="_blank" class="text-secondary-fixed hover:scale-120 transition-transform">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i>
+                </a>
+                <button onclick="scrollToSection('services')" class="btn-primary px-6 py-2 rounded-lg text-xs font-bold text-white shadow-neon-glow">GET STARTED</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="relative z-10">
+        <!-- Hero Section -->
+        <section class="min-h-screen flex items-center justify-center px-6 pt-20">
+            <div class="max-w-5xl text-center">
+                <h1 class="text-6xl md:text-8xl font-['Space_Grotesk'] font-bold mb-6 tracking-tighter text-white">
+                    BUILT FOR <br/>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary-fixed">THE VOID</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
+                    Elite Voxel Assets, Web Development, and High-Retention Content. 
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button onclick="scrollToSection('inventory')" class="btn-primary px-10 py-4 rounded-xl font-bold text-white shadow-neon-glow">Explore Inventory</button>
+                    <button onclick="scrollToSection('services')" class="glass-card px-10 py-4 rounded-xl font-bold border border-white/10">View Pricing</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Inventory -->
+        <section id="inventory" class="py-24 px-6 voxel-grid">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-4xl font-['Space_Grotesk'] font-bold mb-12 flex items-center gap-4">
+                    <span class="text-primary opacity-50">/</span> ASSET_DATABASE
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="glass-card p-4 rounded-2xl group">
+                        <div class="overflow-hidden rounded-xl mb-4">
+                            <img src="https://images.unsplash.com/photo-1614850715649-1d0106293bd1?q=80&w=800" class="aspect-video object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <h3 class="text-xl font-bold mb-1">Voxel Prop Masterpack</h3>
+                        <p class="text-gray-400 text-sm mb-4">40+ optimized 3D models for sandbox maps.</p>
+                        <button onclick="contactWhatsApp('Voxel Masterpack')" class="w-full py-2 bg-primary/10 text-primary border border-primary/20 rounded-lg font-bold">PURCHASE</button>
+                    </div>
+                    <div class="glass-card p-4 rounded-2xl group">
+                        <div class="overflow-hidden rounded-xl mb-4">
+                            <img src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?q=80&w=800" class="aspect-video object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <h3 class="text-xl font-bold mb-1">Neon Panel UI</h3>
+                        <p class="text-gray-400 text-sm mb-4">Futuristic theme for Pterodactyl Panels.</p>
+                        <button onclick="contactWhatsApp('Neon UI')" class="w-full py-2 bg-primary/10 text-primary border border-primary/20 rounded-lg font-bold">PURCHASE</button>
+                    </div>
+                    <div class="glass-card p-4 rounded-2xl group">
+                        <div class="overflow-hidden rounded-xl mb-4">
+                            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800" class="aspect-video object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <h3 class="text-xl font-bold mb-1">Custom Plugin Kit</h3>
+                        <p class="text-gray-400 text-sm mb-4">Core templates for Java development.</p>
+                        <button onclick="contactWhatsApp('Plugin Kit')" class="w-full py-2 bg-primary/10 text-primary border border-primary/20 rounded-lg font-bold">PURCHASE</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-24 px-6 bg-black/40">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex flex-wrap justify-center gap-3 mb-16">
+                    <button class="tab-btn active glass-card px-6 py-3 rounded-xl font-bold text-primary border-primary/50 text-sm" data-target="server-tab">SERVER</button>
+                    <button class="tab-btn glass-card px-6 py-3 rounded-xl font-bold text-gray-500 text-sm" data-target="web-tab">WEB DEV</button>
+                    <button class="tab-btn glass-card px-6 py-3 rounded-xl font-bold text-gray-500 text-sm" data-target="thumb-tab">THUMBNAILS</button>
+                    <button class="tab-btn glass-card px-6 py-3 rounded-xl font-bold text-gray-500 text-sm" data-target="video-tab">VIDEO</button>
+                </div>
+
+                <!-- Server Tab -->
+                <div id="server-tab" class="tab-content active">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="glass-card p-8 rounded-3xl text-center">
+                            <div class="text-4xl font-bold mb-6">₹79<span class="text-sm text-gray-500">/mo</span></div>
+                            <h4 class="font-bold mb-4 font-mono"># DIRT_PLAN</h4>
+                            <button onclick="contactWhatsApp('Dirt Server Plan')" class="w-full py-3 bg-white/5 rounded-xl font-bold hover:bg-white/10 transition-all">SELECT</button>
+                        </div>
+                        <div class="glass-card p-8 rounded-3xl border-primary bg-primary/5 shadow-neon-glow text-center scale-105">
+                            <div class="text-4xl font-bold mb-6 text-primary">₹399<span class="text-sm text-gray-500">/mo</span></div>
+                            <h4 class="font-bold mb-4 font-mono"># LAPIS_PLAN</h4>
+                            <button onclick="contactWhatsApp('Lapis Server Plan')" class="w-full py-3 btn-primary rounded-xl font-bold text-white shadow-neon-glow">DEPLOY</button>
+                        </div>
+                        <div class="glass-card p-8 rounded-3xl text-center">
+                            <div class="text-4xl font-bold mb-6">₹119<span class="text-sm text-gray-500">/mo</span></div>
+                            <h4 class="font-bold mb-4 font-mono"># PROXY_PLAN</h4>
+                            <button onclick="contactWhatsApp('Proxy Server Plan')" class="w-full py-3 bg-white/5 rounded-xl font-bold hover:bg-white/10 transition-all">SELECT</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Web Dev Tab -->
+                <div id="web-tab" class="tab-content">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="glass-card p-10 rounded-3xl border-primary/20">
+                            <h3 class="text-3xl font-bold mb-4 text-primary">Landing / Portfolio</h3>
+                            <p class="text-gray-400 mb-6">Blazing fast responsive sites for personal use or businesses.</p>
+                            <div class="text-3xl font-bold mb-8 text-secondary-fixed font-mono">₹2,000 - ₹5,000</div>
+                            <button onclick="contactWhatsApp('Web Landing Page')" class="btn-primary px-8 py-4 rounded-xl font-bold text-white w-full">ORDER NOW</button>
+                        </div>
+                        <div class="glass-card p-10 rounded-3xl">
+                            <h3 class="text-3xl font-bold mb-4 text-white">Custom Solutions</h3>
+                            <p class="text-gray-400 mb-6">Full-scale community sites, custom dashboards, and API integration.</p>
+                            <div class="text-3xl font-bold mb-8 text-secondary-fixed font-mono">₹5,000+</div>
+                            <button onclick="contactWhatsApp('Custom Web Development')" class="glass-card px-8 py-4 rounded-xl font-bold hover:bg-white/10 transition-all w-full border border-white/10">GET A QUOTE</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Thumbnails Tab -->
+                <div id="thumb-tab" class="tab-content">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="glass-card p-6 rounded-3xl text-center">
+                            <h4 class="text-gray-500 text-xs mb-2">BASIC</h4>
+                            <div class="text-3xl font-bold mb-6 text-white font-mono">₹99</div>
+                            <button onclick="contactWhatsApp('Thumbnail Basic ₹99')" class="w-full py-2 bg-white/5 rounded-lg text-xs font-bold hover:bg-primary/20 transition-all">ORDER</button>
+                        </div>
+                        <div class="glass-card p-6 rounded-3xl text-center border-secondary-fixed/20">
+                            <h4 class="text-gray-500 text-xs mb-2">STANDARD</h4>
+                            <div class="text-3xl font-bold mb-6 text-white font-mono">₹199</div>
+                            <button onclick="contactWhatsApp('Thumbnail Standard ₹199')" class="w-full py-2 bg-white/5 rounded-lg text-xs font-bold hover:bg-primary/20 transition-all">ORDER</button>
+                        </div>
+                        <div class="glass-card p-6 rounded-3xl text-center border-primary/30 shadow-neon-glow">
+                            <h4 class="text-primary text-xs mb-2">PREMIUM</h4>
+                            <div class="text-3xl font-bold mb-6 text-white font-mono">₹499</div>
+                            <button onclick="contactWhatsApp('Thumbnail Premium ₹499')" class="w-full py-2 btn-primary rounded-lg text-xs font-bold text-white">ORDER</button>
+                        </div>
+                        <div class="glass-card p-6 rounded-3xl text-center bg-white/5">
+                            <h4 class="text-secondary-fixed text-xs mb-2">ULTIMATE</h4>
+                            <div class="text-3xl font-bold mb-6 text-white font-mono">₹999</div>
+                            <button onclick="contactWhatsApp('Thumbnail Ultimate ₹999')" class="w-full py-2 bg-secondary-fixed text-black rounded-lg text-xs font-bold">ORDER</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Tab -->
+                <div id="video-tab" class="tab-content">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="glass-card p-10 rounded-3xl flex gap-6 items-start">
+                            <span class="material-symbols-outlined text-4xl text-primary">movie_filter</span>
+                            <div>
+                                <h3 class="text-2xl font-bold mb-2">Shorts & Reels</h3>
+                                <button onclick="contactWhatsApp('Short Form Video')" class="text-primary font-bold hover:underline">₹500 / VIDEO →</button>
+                            </div>
+                        </div>
+                        <div class="glass-card p-10 rounded-3xl flex gap-6 items-start">
+                            <span class="material-symbols-outlined text-4xl text-secondary-fixed">video_camera_back</span>
+                            <div>
+                                <h3 class="text-2xl font-bold mb-2">Long Form Edits</h3>
+                                <button onclick="contactWhatsApp('Long Form Video')" class="text-secondary-fixed font-bold hover:underline">₹2,000+ / VIDEO →</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <footer id="contact" class="py-24 px-6 border-t border-white/5 glass-panel mt-20">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-16 items-center">
+                <div class="text-center md:text-left">
+                    <div class="text-3xl font-bold text-primary mb-4">TP x STUDIO</div>
+                    <div class="flex justify-center md:justify-start gap-4">
+                        <a href="https://discord.gg/MxuVUEJM" target="_blank" class="glass-card w-14 h-14 rounded-full flex items-center justify-center hover:text-primary hover:shadow-neon-glow transition-all">
+                            <i class="fa-brands fa-discord text-2xl"></i>
+                        </a>
+                        <a href="https://wa.me/639078989078" target="_blank" class="glass-card w-14 h-14 rounded-full flex items-center justify-center hover:text-secondary-fixed hover:shadow-green-glow transition-all">
+                            <i class="fa-brands fa-whatsapp text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="glass-card p-8 rounded-3xl text-center border-primary/20">
+                    <span class="material-symbols-outlined text-primary mb-4 text-4xl">mail</span>
+                    <h4 class="font-bold mb-1">Direct Email</h4>
+                    <a href="mailto:tpxlegend438@gmail.com" class="text-primary hover:underline block mb-2 font-mono text-sm">tpxlegend438@gmail.com</a>
+                </div>
+
+                <div class="text-center md:text-right">
+                    <button onclick="contactWhatsApp('General Inquiry')" class="btn-primary px-8 py-3 rounded-xl font-bold text-white mb-4">HIRE STUDIO</button>
+                    <p class="text-[10px] font-mono text-gray-600 uppercase tracking-widest">© 2024 TP x STUDIO • FORGED IN THE VOID</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        // --- BUTTON FUNCTIONALITIES ---
+        function contactWhatsApp(service) {
+            const phone = "639078989078";
+            const text = encodeURIComponent(`Hello TP x STUDIO! I'm interested in: ${service}.`);
+            window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
+        }
+
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // --- TAB SWITCHER LOGIC ---
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                tabBtns.forEach(b => b.classList.remove('active', 'text-primary', 'border-primary/50'));
+                tabBtns.forEach(b => b.classList.add('text-gray-500'));
+                tabContents.forEach(c => c.classList.remove('active'));
+
+                btn.classList.add('active', 'text-primary', 'border-primary/50');
+                btn.classList.remove('text-gray-500');
+                document.getElementById(btn.dataset.target).classList.add('active');
+            });
+        });
+
+        // --- FIXED VOXEL BLOCKS ANIMATION ---
+        const initThree = () => {
+            const container = document.getElementById('three-container');
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            container.appendChild(renderer.domElement);
+
+            const voxels = [];
+            const mouse = { x: 0, y: 0 };
+
+            // Create Voxel Group
+            const voxelGroup = new THREE.Group();
+            scene.add(voxelGroup);
+
+            // Cube helper function
+            const createVoxel = () => {
+                const size = Math.random() * 0.8 + 0.2;
+                const geometry = new THREE.BoxGeometry(size, size, size);
+                
+                // Color switching
+                const color = Math.random() > 0.5 ? 0xe3b5ff : 0x79ff5b;
+                
+                // Main material
+                const material = new THREE.MeshPhongMaterial({ 
+                    color: color, 
+                    transparent: true, 
+                    opacity: 0.15,
+                    shininess: 100 
+                });
+
+                // Wireframe for that Voxel look
+                const edges = new THREE.EdgesGeometry(geometry);
+                const lineMat = new THREE.LineBasicMaterial({ color: color, transparent: true, opacity: 0.4 });
+                const wireframe = new THREE.LineSegments(edges, lineMat);
+
+                const mesh = new THREE.Mesh(geometry, material);
+                mesh.add(wireframe);
+
+                // Random placement
+                mesh.position.set(
+                    (Math.random() - 0.5) * 35,
+                    (Math.random() - 0.5) * 35,
+                    (Math.random() - 0.5) * 15
+                );
+
+                mesh.userData = {
+                    rotationSpeed: Math.random() * 0.01,
+                    driftSpeed: Math.random() * 0.005
+                };
+
+                voxelGroup.add(mesh);
+                voxels.push(mesh);
+            };
+
+            for(let i=0; i<45; i++) createVoxel();
+
+            // Lighting
+            const ambient = new THREE.AmbientLight(0xffffff, 0.4);
+            const pointLight = new THREE.PointLight(0xa020f0, 1, 50);
+            pointLight.position.set(10, 10, 10);
+            scene.add(ambient, pointLight);
+
+            camera.position.z = 15;
+
+            // Mouse Interaction Logic
+            window.addEventListener('mousemove', (e) => {
+                mouse.x = (e.clientX / window.innerWidth) - 0.5;
+                mouse.y = (e.clientY / window.innerHeight) - 0.5;
+            });
+
+            function animate() {
+                requestAnimationFrame(animate);
+
+                // Smooth Parallax movement
+                voxelGroup.rotation.y += (mouse.x * 0.05 - voxelGroup.rotation.y) * 0.05;
+                voxelGroup.rotation.x += (mouse.y * 0.05 - voxelGroup.rotation.x) * 0.05;
+
+                voxels.forEach(v => {
+                    v.rotation.x += v.userData.rotationSpeed;
+                    v.rotation.z += v.userData.rotationSpeed;
+                    v.position.y += Math.sin(Date.now() * 0.001 * v.userData.driftSpeed) * 0.01;
+                });
+
+                renderer.render(scene, camera);
+            }
+
+            animate();
+
+            // Window Resize handling
+            window.addEventListener('resize', () => {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            });
+        };
+
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', initThree);
+    </script>
+</body>
+</html>
