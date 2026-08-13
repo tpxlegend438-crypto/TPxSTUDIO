@@ -1,0 +1,22 @@
+# User-Agent Rules for Search Engines & AI Bots
+User-agent: *
+Allow: /
+
+# Specific AI Engine Crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# Sitemap Location
+Sitemap: https://tpxstudio.vercel.app/sitemap.xml
