@@ -1,0 +1,58 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://tpxstudio.vercel.app/#organization",
+      "name": "TP x STUDIO",
+      "alternateName": ["TPX Studio", "TPX Digital Studio"],
+      "url": "https://tpxstudio.vercel.app/",
+      "logo": "https://tpxstudio.vercel.app/logo.png",
+      "image": "https://tpxstudio.vercel.app/logo.png",
+      "description": "TP x STUDIO is an obsidian-gold digital studio specializing in custom web architecture, AI workflow coding, viral media production, low-latency game servers, and 3D voxel assets.",
+      "telephone": "+917047336254",
+      "email": "tpxlegend438@gmail.com",
+      "priceRange": "₹79 - ₹5000+",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IN"
+      },
+      "sameAs": [
+        "https://pixelcraftart.vercel.app/",
+        "https://discord.gg/seJSenBX"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://tpxstudio.vercel.app/#website",
+      "url": "https://tpxstudio.vercel.app/",
+      "name": "TP x STUDIO",
+      "description": "Custom Web Architecture, Viral Media Editing, Voxel Assets & Low Latency Game Servers",
+      "publisher": {
+        "@id": "https://tpxstudio.vercel.app/#organization"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://tpxstudio.vercel.app/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What services does TP x STUDIO offer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "TP x STUDIO offers web design & development, open-source AI coding, BaaS platforms, 3D Voxel Assets, game server hosting nodes, pixel art via PixelCraft Art, and viral video editing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does a website or game server node cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Game Server nodes start at ₹79/mo, video edits from ₹500, landing pages from ₹4,999, and full-stack web platforms or custom BaaS setups are quoted based on project requirements."
+          }
+        }
+      ]
+    }
+  ]
+}
