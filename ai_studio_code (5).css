@@ -1,0 +1,123 @@
+/* Custom Scroll Behavior and Layout */
+html { 
+  scroll-behavior: smooth; 
+  scroll-padding-top: 4.5rem;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #0A0907;
+  background-image: 
+    radial-gradient(circle at 50% -10%, rgba(212, 162, 40, 0.18) 0%, transparent 60%),
+    radial-gradient(circle at 10% 45%, rgba(197, 146, 30, 0.10) 0%, transparent 45%),
+    radial-gradient(circle at 90% 65%, rgba(246, 234, 216, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 50% 115%, rgba(184, 134, 11, 0.15) 0%, transparent 60%);
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+/* Hide Scrollbars */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Palette Glow Utilities */
+.glow-gold { box-shadow: 0 0 30px rgba(212, 162, 40, 0.35); }
+.glow-amber { box-shadow: 0 0 30px rgba(197, 146, 30, 0.35); }
+
+/* Glassmorphism Cards */
+.glass-card {
+  background: rgba(22, 20, 24, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(212, 162, 40, 0.2);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, box-shadow 0.35s ease;
+  transform: translateZ(0);
+}
+.glass-card:hover {
+  border-color: rgba(212, 162, 40, 0.55);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.95), 0 0 25px rgba(212, 162, 40, 0.25);
+}
+
+/* Floating Dock */
+.glass-dock {
+  background: rgba(18, 16, 18, 0.92);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(212, 162, 40, 0.3);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.9), 0 0 20px rgba(212, 162, 40, 0.2);
+}
+
+/* Capsule Tab Styles */
+.stylish-tab {
+  position: relative;
+  border-radius: 9999px;
+  padding: 0.35rem 0.85rem;
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid rgba(212, 162, 40, 0.2);
+  background: rgba(26, 24, 28, 0.85);
+  color: #A0A0A5;
+  backdrop-filter: blur(12px);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.stylish-tab:hover {
+  color: #F6EAD8;
+  border-color: rgba(212, 162, 40, 0.5);
+  background: rgba(212, 162, 40, 0.12);
+  transform: translateY(-1px);
+}
+
+.stylish-tab.active-gold {
+  background: linear-gradient(135deg, #D4A228 0%, #C5921E 100%) !important;
+  color: #0A0A0C !important;
+  border-color: #D4A228 !important;
+  box-shadow: 0 0 18px rgba(212, 162, 40, 0.45);
+  font-weight: 800 !important;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #0A0A0C; }
+::-webkit-scrollbar-thumb { background: #D4A228; border-radius: 4px; }
+
+/* Floating Animation */
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+.animate-float { animation: floatSlow 5s ease-in-out infinite; }
+
+/* Smooth Scroll Reveal */
+.reveal { 
+  opacity: 0; 
+  transform: translateY(22px); 
+  transition: opacity 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1); 
+}
+.reveal.active { 
+  opacity: 1; 
+  transform: translateY(0); 
+}
+
+.lang-btn.active-lang {
+  background: #D4A228;
+  color: #0A0A0C;
+  font-weight: 800;
+}
+
+/* Syntax Highlighting for Code Studio */
+.syn-kw { color: #f43f5e; font-weight: 700; }
+.syn-fn { color: #38bdf8; }
+.syn-str { color: #a3e635; }
+.syn-type { color: #fbbf24; }
+.syn-cm { color: #71717a; font-style: italic; }
+.syn-num { color: #c084fc; }
+.syn-prop { color: #F6EAD8; }
