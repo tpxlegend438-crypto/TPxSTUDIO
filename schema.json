@@ -5,32 +5,97 @@
       "@type": "ProfessionalService",
       "@id": "https://tpxstudio.vercel.app/#organization",
       "name": "TP x STUDIO",
-      "alternateName": ["TPX Studio", "TPX Digital Studio"],
+      "alternateName": [
+        "TPX Studio",
+        "TPX",
+        "TP x STUDIO CyberHub"
+      ],
       "url": "https://tpxstudio.vercel.app/",
       "logo": "https://tpxstudio.vercel.app/logo.png",
       "image": "https://tpxstudio.vercel.app/logo.png",
-      "description": "TP x STUDIO is an obsidian-gold digital studio specializing in custom web architecture, AI workflow coding, viral media production, low-latency game servers, and 3D voxel assets.",
+      "description": "TP x STUDIO is an elite digital studio specializing in custom web architecture, multi-language coding (TypeScript, Python, Rust, Go, Java), viral video editing, low-latency game servers, and 3D voxel models.",
       "telephone": "+917047336254",
       "email": "tpxlegend438@gmail.com",
-      "priceRange": "₹79 - ₹5000+",
+      "priceRange": "₹500 - ₹50,000+",
       "address": {
         "@type": "PostalAddress",
         "addressCountry": "IN"
       },
       "sameAs": [
         "https://pixelcraftart.vercel.app/",
+        "https://zigoseries.vercel.app/",
         "https://discord.gg/seJSenBX"
-      ]
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "TP x STUDIO Digital Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Custom Web Architecture & SaaS Portals",
+              "description": "High-performance, conversion-driven web applications built on React and Next.js with 100/100 Lighthouse performance."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Open-Source AI & Workflow Automation",
+              "description": "Fine-tuned LLM chatbots, LangChain vector search, and automated Telegram/Discord bot workflows."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Self-Hostable Backend as a Service (BaaS)",
+              "description": "Visual drag-and-drop database schema designer with auto-generated REST/GraphQL endpoints."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "3D Voxel Models & Sandbox Game Props",
+              "description": "40+ production-grade Blockbench JSON models optimized for Minecraft servers and sandbox worlds."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Low-Latency Game Server Hub (<12ms)",
+              "description": "High-clock frequency CPU game servers hosted in low-ping India datacenters with DDoS shield."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Viral Shorts & Cinema Video Edits",
+              "description": "Viral short-form edits for Instagram Reels, YouTube Shorts, and TikTok with SFX audio mastering."
+            }
+          }
+        ]
+      }
     },
     {
       "@type": "WebSite",
       "@id": "https://tpxstudio.vercel.app/#website",
       "url": "https://tpxstudio.vercel.app/",
       "name": "TP x STUDIO",
-      "description": "Custom Web Architecture, Viral Media Editing, Voxel Assets & Low Latency Game Servers",
       "publisher": {
         "@id": "https://tpxstudio.vercel.app/#organization"
-      }
+      },
+      "inLanguage": [
+        "en",
+        "hi",
+        "ja",
+        "es",
+        "de"
+      ]
     },
     {
       "@type": "FAQPage",
@@ -41,7 +106,7 @@
           "name": "What services does TP x STUDIO offer?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "TP x STUDIO offers web design & development, open-source AI coding, BaaS platforms, 3D Voxel Assets, game server hosting nodes, pixel art via PixelCraft Art, and viral video editing."
+            "text": "We offer web design & development, open source AI coding, BaaS platforms, 3D Voxel Assets, game server hosting nodes, and video editing for social media & long-form content."
           }
         },
         {
@@ -49,7 +114,55 @@
           "name": "How much does a website or game server node cost?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Game Server nodes start at ₹79/mo, video edits from ₹500, landing pages from ₹4,999, and full-stack web platforms or custom BaaS setups are quoted based on project requirements."
+            "text": "Game Server nodes start at ₹79/mo, video edits from ₹500, landing pages from ₹4,999, and full-stack web platforms or custom BaaS setups are quoted based on specific project requirements."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does it take to build a website or game server setup?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Game Server nodes deploy instantly! Standard landing pages take 3–5 days. Custom multi-page sites and 3D Voxel packs take 1–2 weeks. Full Web Apps take 2–4 weeks."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you work with international clients?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! We work with clients across India, US, UK, UAE, Japan, and Germany, communicating smoothly via WhatsApp, Discord, Email, and Slack."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I get 100% ownership of the source code and design files?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Upon project completion and final handover, you receive full intellectual property ownership, complete GitHub source repository rights, Figma UI design files, 3D Blockbench models, and production assets with zero vendor lock-in."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens after the project launches? Is maintenance included?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Every project includes 30 days of complimentary post-launch technical support, bug fixing, and performance fine-tuning. We also offer monthly retainer plans for ongoing monitoring."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do milestone payments and contract agreements work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For custom web builds and large creative packages, we follow a transparent 50% upfront and 50% on final delivery & QA approval structure via UPI, Razorpay, Stripe, Bank Wire, or Crypto."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you revamp or speed up my existing website or game server?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! We specialize in code audits, legacy code refactoring to Next.js/React, UI/UX redesigns, 100/100 Lighthouse speed optimizations, and server migrations."
           }
         }
       ]
