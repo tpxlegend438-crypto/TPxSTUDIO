@@ -1,22 +1,78 @@
 # TP x STUDIO
 
-> Custom Web Architecture, Open-Source AI Coding, Low-Latency Game Servers, Voxel 3D Assets & Viral Media Editing.
+> Premier Digital Architecture, Polyglot Engineering, Game Server Hub, and Media Production Studio.
 
-## Overview
-TP x STUDIO is an obsidian-gold digital studio providing end-to-end web engineering, game server nodes in India datacenters, 3D voxel models, and short-form video editing.
+TP x STUDIO is an elite digital agency and technical laboratory specializing in custom full-stack web architecture, artificial intelligence workflows, low-latency game server hosting nodes, 3D voxel game asset creation, and viral social media video production.
 
-## Services
-- Web Architecture: High-speed Next.js and React web applications, Discord OAuth2 integrations, and webstores.
-- Game Servers: Low-latency India server nodes starting at ₹79/mo with DDoS protection.
-- 3D Voxel Assets: Blockbench JSON 3D prop packs optimized for Minecraft and sandbox engines.
-- Media Production: High-retention shorts, Reels, and YouTube cinematic gaming trailers.
-- Partner Studio - PixelCraft Art: Custom 2D/3D pixel art, game UI, sprite sheets, and digital graphics.
+- **Website**: https://tpxstudio.vercel.app/
+- **Location**: India (Serving global clients across India, US, UK, UAE, Japan, and Germany)
+- **Primary Contact**: tpxlegend438@gmail.com
+- **Direct WhatsApp Protocol**: +91 7047336254 (https://wa.me/917047336254)
+- **Community Discord**: https://discord.gg/seJSenBX
 
-## Partner Ecosystem
-- PixelCraft Art Studio: https://pixelcraftart.vercel.app/
+---
 
-## Contact Details
-- Website: https://tpxstudio.vercel.app/
-- WhatsApp: +91 7047336254
-- Email: tpxlegend438@gmail.com
-- Discord: https://discord.gg/seJSenBX
+## Core Technical Disciplines
+
+1. **Custom Web Architecture & SaaS Portals**:
+   - High-performance, conversion-driven web applications built using Next.js, React, TypeScript, and Tailwind CSS.
+   - Guaranteed 100/100 Google Lighthouse scores, sub-second first-contentful paint, server-side rendering (SSR), and automated CI/CD deployment pipelines.
+   - Secure Discord OAuth2 authentication, automated rank delivery checkouts, and custom API architectures.
+
+2. **Open-Source AI & Autonomous Workflows**:
+   - Autonomous multi-agent swarms, RAG (Retrieval-Augmented Generation) pipelines, and LangChain orchestration.
+   - Vector database design (Pinecone, Qdrant, ChromaDB) and fine-tuned LLM chatbot deployments.
+   - 24/7 automated Discord, Telegram, and WhatsApp customer onboarding bots.
+
+3. **Self-Hostable Backend as a Service (BaaS)**:
+   - White-label, production-grade backend engine offering visual drag-and-drop database schema creation (PostgreSQL, MongoDB).
+   - Auto-generated secure REST & GraphQL endpoints with role-based JWT access controls.
+   - Self-hostable on Docker, Railway, Render, or bare-metal VPS ($0 recurring cloud fees).
+
+4. **3D Voxel Models & Engine Assets**:
+   - Production-grade Blockbench JSON and OBJ 3D models engineered for Minecraft servers, sandbox game engines, and custom game worlds.
+   - Rigging, bone hierarchies, high-FPS polycount optimizations, and custom Java plugin configs (ItemsAdder, Oraxen, MythicMobs).
+
+5. **Low-Latency Game Server Hub (<12ms)**:
+   - High-clock frequency CPU game servers hosted in Tier-3/4 Indian datacenters.
+   - Enterprise Layer 3/4/7 DDoS mitigation shields, automated daily offsite snapshot backups, and full Pterodactyl console access.
+   - BungeeCord and Velocity network proxy routing with 99.9% uptime.
+
+6. **Viral Shorts & Cinema Video Production**:
+   - High-retention short-form video editing for Instagram Reels, YouTube Shorts, and TikTok.
+   - Kinetic typography, custom audio mastering, sound design (SFX), and gaming storytelling cinema.
+
+---
+
+## Polyglot Code Capabilities
+
+TP x STUDIO natively develops, audits, and maintains systems across 12 modern programming languages:
+
+- **TypeScript / JavaScript**: Next.js App Router, React, Node.js, Express, Tailwind CSS, Electron.
+- **Python**: FastAPI, PyTorch, LangChain, LlamaIndex, automated web scraping, data pipelines.
+- **Rust**: High-throughput microservices, WebAssembly (WASM), memory-safe game daemons.
+- **Go (Golang)**: High-concurrency microservices, gRPC, containerized backend routing.
+- **Java**: Custom Minecraft server plugins (Paper, Spigot, Purpur), backend architectures.
+- **C++**: Matrix engines, game simulation physics, high-performance computing modules.
+- **Kotlin & Swift**: Native mobile application ecosystems (Jetpack Compose, SwiftUI).
+- **Dart / Flutter**: Cross-platform mobile and desktop media applications.
+- **C# / .NET**: E-commerce payment connectors, Discord bot frameworks, Windows desktop utilities.
+- **SQL / PostgreSQL**: Relational schema architecture, Prisma ORM, indexing optimization.
+- **Bash / Shell**: DevOps automation, Docker orchestration, Linux server hardening.
+
+---
+
+## Studio Partners & Ecosystem
+
+- **PixelCraft Art Studio**: https://pixelcraftart.vercel.app/ (2D/3D custom pixel art, sprite sheets, voxel assets, and retro game illustrations).
+- **Zigo Series Entertainment**: https://zigoseries.vercel.app/ (High-performance dark-glass media streaming catalog portal).
+
+---
+
+## Commercial Terms & Pricing Baseline
+
+- **Game Server Nodes**: Starting at ₹79/month (Dirt, Lapis, and Proxy nodes).
+- **Social Media Video Edits**: Starting at ₹500/video.
+- **High-Conversion Landing Pages**: Starting at ₹4,999.
+- **Full-Stack SaaS / Custom BaaS**: Quoted based on project specifications.
+- **Handover Guarantee**: 100% full source code ownership, GitHub repository transfer, Figma UI files, and 30-day post-launch support.
