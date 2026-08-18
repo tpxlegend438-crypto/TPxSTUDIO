@@ -1,0 +1,40 @@
+{
+  "name": "tpx-studio",
+  "version": "2.4.0",
+  "description": "TP x STUDIO - Premier Digital Architecture, Polyglot Engineering, Game Server Hub & Media Production Studio.",
+  "main": "index.html",
+  "scripts": {
+    "dev": "browser-sync start --server --files \"index.html, style.css, app.js\" --port 3000 --no-notify",
+    "serve": "npx serve -l 3000 .",
+    "start": "npm run serve",
+    "lint:html": "npx html-validator-cli --file=index.html",
+    "format": "npx prettier --write \"index.html\" \"style.css\" \"app.js\" \"vercel.json\" \"package.json\"",
+    "format:check": "npx prettier --check \"index.html\" \"style.css\" \"app.js\" \"vercel.json\""
+  },
+  "keywords": [
+    "tpx-studio",
+    "web-architecture",
+    "nextjs",
+    "react",
+    "polyglot-coding",
+    "game-servers",
+    "minecraft-plugins",
+    "3d-voxel-assets",
+    "viral-video-editing",
+    "saas-portals",
+    "dark-glassmorphism",
+    "gold-obsidian-theme"
+  ],
+  "author": "TP x STUDIO <tpxlegend438@gmail.com> (https://tpxstudio.vercel.app/)",
+  "license": "MIT",
+  "homepage": "https://tpxstudio.vercel.app/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tpxstudio/tpxstudio-web.git"
+  },
+  "devDependencies": {
+    "browser-sync": "^3.0.3",
+    "prettier": "^3.3.3",
+    "serve": "^14.2.4"
+  }
+}
