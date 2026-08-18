@@ -1,20 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+        
+  <!-- Main Studio Homepage (Multilingual URLs) -->
   <url>
     <loc>https://tpxstudio.vercel.app/</loc>
-    <lastmod>2026-08-13</lastmod>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    
+    <!-- Alternate Language Annotations -->
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tpxstudio.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tpxstudio.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://tpxstudio.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tpxstudio.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tpxstudio.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://tpxstudio.vercel.app/"/>
+
+    <!-- Key Image Discovery -->
     <image:image>
       <image:loc>https://tpxstudio.vercel.app/logo.png</image:loc>
-      <image:title>TP x STUDIO Logo</image:title>
+      <image:title>TP x STUDIO Official Obsidian Gold Emblem</image:title>
+      <image:caption>TP x STUDIO - Digital Architecture, Game Servers and Media Studio</image:caption>
     </image:image>
   </url>
-  <url>
-    <loc>https://pixelcraftart.vercel.app/</loc>
-    <lastmod>2026-08-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
+
 </urlset>
